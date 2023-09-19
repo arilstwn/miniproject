@@ -76,5 +76,3 @@ function hapus( id ) {
 </script>
 </body>
 </html
-</body>
-</html>

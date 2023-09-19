@@ -14,45 +14,46 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		
 		$this->load->view('admin/elaina');
 	}
-	public function siswa()
+	public function murid()
 	{
-		$data['siswa'] = $this->m_model->get_data('siswa')->result();
-		$this->load->view('admin/siswa', $data);
+		$data['guru'] = $this->m_model->get_data('guru')->result();
+		$this->load->view('admin/guru', $data);
 	}
 
-	public function hapus_siswa($id)
+	public function hapus_guru($id)
 	{
-		$this->m_modal->delete('siswa', 'id_siswa', $id);
-		redirect(base_url('admin/siswa'));
+		$this->m_modal->delete('guru', 'id_guru', $id);
+		redirect(base_url('admin/guru'));
 	}
-	public function tambah_siswa()
+	public function tambah_guru()
 	{
-		$this->load->view('admin/tambah_siswa');
+		$this->load->view('admin/tambah_guru');
 	}
-	// public function tambah_siswa()
+	// public function tambah_guru()
 	// {
 	// 	$data['kelas'] = $this->m_model->get_data('kelas')->result();
-	// 	$this->load->view('admin/tambah_siswa', $data);
+	// 	$this->load->view('admin/tambah_guru', $data);
 	// }
-	public function aksi_tambah_siswa()
+	public function aksi_tambah_guru()
 	{
 		$data = [
-			'nama_siswa' => $this->input->post('nama'),
-			'nisn' => $this->input->post('nisn'),
-			'gender' => $this->input->post('gender'),
-			'id_kelas' => $this->input->post('kelas'),
+			'nama_guru'    => $this->input->post('nama_guru'),
+			'nisn'          => $this->input->post('nisn'),
+			'gender'        => $this->input->post('gender'),
+			'id_kelas'      => $this->input->post('nama_mapel'),
+			'id_kelas'      => $this->input->post('guru_mapel'),
 		];
-		$this->m_model->tambah_data('siswa', $data);
-		redirect(base_url('admin/siswa'));
+		$this->m_model->tambah_data('guru', $data);
+		redirect(base_url('admin/guru'));
 	}
 	public function ubah_siswa()
 	{
-		$data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa')->result();
+		$data['guru']=$this->m_model->get_by_id('guru', 'id_guru')->result();
 		$data['kelas']=$this->m_model->get_data('kelas')->result();
-		$this->load->view('admin/ubah_siswa', $data);
+		$this->load->view('admin/ubah_guru', $data);
 	}
+
 	
 }

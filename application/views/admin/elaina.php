@@ -9,22 +9,14 @@
 
    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <style>
-a {
-  background-image: url('');
+body {
+  background-image: url('https://gamefinity-assets.sgp1.digitaloceanspaces.com/wp-content/uploads/2023/05/07063713/Hololive-English-1st-Concert-Connect-the-World-joined-by-Hololive-Indonesia-VTubers-1024x576.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed; 
-  background-size: 90% 10%;
+  background-size: 100% 100%;
 }
 </style>
-    <style> 
-p {
-  width: 300px;
-  height: 100px;
-  padding: 20px;
-  background-color: red;
-  box-shadow: 10px 15px;
-}
-</style>
+   
 </head>
 <body>
 
@@ -62,13 +54,75 @@ p {
           </li>
         </ul>
         <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">  
           <button class="btn btn-success" type="submit">Search</button>
         </form>
       </div>
     </div>
   </div>
-</nav>
+</nav>  
+
+
+   
+
+<div class="row ">
+            <div class="col-12 card p-6">
+                <div class="card-body min-vh-200  align-items-center">
+                    <div class="card w-50 m-auto p-2">
+                        <table class="table  table-striped">
+                            <center><thead>
+                                <tr>
+                                    <th scope="col">No </th>
+                                    <th scope="col">Nama Guru </th>
+                                    <th scope="col">NIK </th>
+                                    <th scope="col"> Gender </th>
+                                    <th scope="col"> Nama Mapel </th>
+                                    <th scope="col">Guru Mapel</th>
+                                    <th scope="col">Aksi</th>
+                                    
+                                </tr>
+                            </thead></center>
+                            <tbody>
+                                <?php
+                 $no= 0; foreach ($guru as $row) :$no++;                          
+                    ?>
+                                <tr>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo$no ?></td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nana_guru ?></td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nisn ?></td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_mapel ?>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->guru_mapelm ?></td>
+                                 </td>
+                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                                    <?php echo tampil_full_guru_byid($row->guru); ?>
+                                 </td>
+                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                                    <a href="http://localhost/codeigniter-3/admin/ubah_siswa"<?php echo base_url('admin/ubah_guru/').$row->id_siswa ?>>Ubah</a>
+                                    <a href="#" class="inline-block rounded bg-blue-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">Hapus</a>                                         
+                                          </td>
+                                       </tr>
+                                       <?php endforeach ?>
+                                       
+                                    </tbody>
+                                 </table>
+                                 
+                                 <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-primary">Tambah</a>
+                    </div>
+                    </form>
+
+                   
+
+                </div>
+            </div>
+<script>
+   function hapus(id) {
+      var yes = confirm('yakin di hapus');
+      if (yes == true) {
+         window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+      }
+   }
+</script>
   
 
    

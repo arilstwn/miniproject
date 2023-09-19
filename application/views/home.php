@@ -139,21 +139,21 @@ span.psw {
   <center><h1 style="background-color:DodgerBlue;" style="color:yellow">Pendaftaran Online Di Class Roam Of The Elite</h1></center>
   <center><h3>エリートクラス登録の徘徊</h3></center>
   <hr>
-  <center><img src="https://o.remove.bg/downloads/603583d8-788f-43fd-9801-166d9c553fa1/images-removebg-preview.png" alt="" width="230" height="250"></center>
+  <center><img src="https://o.remove.bg/downloads/540c71b8-cc3a-47f5-b215-99a451d154aa/images-removebg-preview.png" alt="" width="230" height="250"></center>
   <center><p style="color:white">エリートの授業放浪へようこそ 下のリンクに慎重に記入してください。ほんのわずかな間違いが致命的になるため、間違いを犯さないようにしてください。</p></center>
   <center><p style="color:yellow">Erīto no jugyō hōrō e yōkoso shita no rinku ni shinchō ni kinyū shite kudasai. Hon'no wazukana machigai ga chimei-teki ni naru tame, machigai o okasanai yō ni shite kudasai.</p></center>
-  <center><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></center>
-
+  <center><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="http://localhost/miniproject/auth/register">register</a></button>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></center>
 <div id="id01" class="modal">
   
   <form class="modal-content animate" action="<?php echo base_url(); ?>Auth/aksi_login" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <a></a>
-      <img src="https://o.remove.bg/downloads/39cac7da-f813-4330-92ba-eb50c4021768/jl-removebg-preview.png" alt="" width="350" height="250">
+      <img src="https://o.remove.bg/downloads/383c6786-4bfa-4c2f-967c-7638985a63dd/class_roam-removebg-preview.png" alt="" width="660" height="300">
     </div>
         <center><a style="color:red">記入してください。姉/妹</a></center>
-        <center><a style="color:blue">Kinyū shite kudasai. Onēsan</a></center>
+        <center><a style="color:blue">Para Member Baru Wajib Mengisi</a></center>
     <div class="container">
       <label for="uname"><b>Email:</b></label>
       <input type="text" placeholder="Mēruadoresu o nyūryoku shite" name="email" required>
