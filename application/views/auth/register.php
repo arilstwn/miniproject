@@ -55,18 +55,25 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 <style>
 body {
-  background-image: url('https://o.remove.bg/downloads/13190b31-43f2-4208-871b-fabd00d0150c/Hololive.Indonesia.full.3234714-removebg-preview.png');
+  background-image: url('https://o.remove.bg/uploads/cd4a4bc5-085d-4b19-9aa1-710f7e18edf0/Hololive.Indonesia.full.3234714-removebg-preview.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
 }
 </style>
-
+<style>
+form {
+  background-image: url('https://steamuserimages-a.akamaihd.net/ugc/2036238070812223785/6AFFC9405CC152A6BBA555AFF838ACA3CAF5DC88/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+</style>
 </head>
 <body>
 <section class="vh-100 bg-image"
-  
-style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -74,7 +81,6 @@ style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-
 
 
 
@@ -97,13 +103,7 @@ style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/
               <i class="fa fa-key icon"></i>
               <input class="input-field" type="password" placeholder="Pasuwādo o nyūryoku shite kudasai" name="psw">
                </div>
-              
-               <label for="uname"><b>Repeat Password:</b></label>
-              <div class="input-container">
-              <i class="fa fa-key icon"></i>
-              <input class="input-field" type="password" placeholder="Kurikaeshi no pasuwādo o kaite kudasai" name="psw">
-               </div>
-                
+ 
                 <div class="form-check d-flex justify-content-center mb-5">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
                   <label class="form-check-label" for="form2Example3g">
@@ -112,7 +112,7 @@ style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                 </div>
 

@@ -10,7 +10,7 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <style>
 body {
-  background-image: url('');
+  background-image: url('https://w.wallha.com/ws/13/dAimUlRq.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
@@ -73,40 +73,38 @@ body {
 
    
 
-<div class="row ">
+<center><div class="row ">
             <div class="col-12 card p-6">
-                <div class="card-body min-vh-200 align-items-center">
-                    <div class="card w-50 m-auto p-3">
+                <div class="card-body min-vh-200  align-items-center">
+                    <div class="card w-50 m-auto p-2">
                         <table class="table  table-striped">
                             <center><thead>
                                 <tr>
                                     <th scope="col">No </th>
-                                    <th scope="col">Nama_guru </th>
-                                    <th scope="col">NIk </th>
+                                    <th scope="col">Nama </th>
+                                    <th scope="col">NISN </th>
                                     <th scope="col"> Gender </th>
-                                    <th scope="col">Nama_Mapel </th>
-                                    <th scope="col">Guru_Mapel </th>
+                                    <th scope="col"> Kelas </th>
+                                    <th scope="col"> Sekolah </th>
                                     <th scope="col">Aksi</th>
                                     
                                 </tr>
                             </thead></center>
                             <tbody>
                                 <?php
-                 $no= 0;foreach ($guru as $row) :$no++                          
+                 $no= 0;foreach ($siswa as $row  ) :$no++                          
                     ?>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $no ?></td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                        <?php echo $row->nama_guru ?></td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo$no ?></td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_siswa ?></td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nisn ?></td>
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_mapel ?>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->guru_mapel ?>
-                                 </td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->id_kelas ?>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_sekolah ?>
                                  </td>
                                  <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                    <a href="http://localhost/codeigniter-3/admin/ubah_siswa"<?php echo base_url('admin/ubah_siswa/').$row->nama_guru ?>>Ubah</a>
-                                    <a href="#" class="inline-block rounded bg-blue-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">Hapus</a>                                         
+                                 <a href="http://localhost/miniproject/admin/ubah_siswa" <?php echo base_url('admin/ubah_siswa/').$row->id_siswa ?> class="inline-block rounded bg-red-600 px-3 py-2 text-xs font-medium text-white hover:bg-red-700">Ubah</a>   
+                                    <a href="#" class="inline-block rounded bg-blue-600 px-3 py-2 text-xs font-medium text-white hover:bg-red-700">Hapus</a>                                         
                                           </td>
                                        </tr>
                                        <?php endforeach ?>
@@ -121,7 +119,7 @@ body {
                    
 
                 </div>
-            </div>
+            </div></center>
 <script>
    function hapus(id) {
       var yes = confirm('yakin di hapus');

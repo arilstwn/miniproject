@@ -2,29 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title ?></title>
-   
-    <style>
-body {
-  background-image: url('https://cdn.pnghd.pics/data/13/background-sekolah-anime-8.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  background-size: 100% 100%;
-}
-</style>
-
-</head>
-
-<body>
-    
-    <h1 style="text-align: center;">__| Pendaftaran Online |__</h1>
-    <hr>
-    <center><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Classroom_of_the_Elite_2nd_Season_logo.png" alt="" width="450" height="250"></center>
-    <center><h2><a>Classroom of the Elite</a></h2></center>
-    <!DOCTYPE html>
-
 <style>
 
 
@@ -188,15 +165,5 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-
-
-
-
-
-
 </body>
-
-
-
 </html>

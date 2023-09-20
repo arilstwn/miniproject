@@ -8,13 +8,9 @@ class Auth extends CI_Controller {
 	    parent::__construct();
 		$this->load->model('m_model');
 	}
-	public function register()
-	 {
-      $this->load->view('auth/register');
-	}
 	public function index()
 	 {
-      $this->load->view('Auth/login');
+      $this->load->view('auth/login');
 	}
 	public function aksi_login()
 	{
@@ -28,9 +24,9 @@ class Auth extends CI_Controller {
 			$data = [
 				'logged_in'    => TRUE,
 				'email'        => $result['email'],
-				'username'     => $result['username'],
-				'role'         => $result['role'],
-				'id'           => $result['id'],
+				'username'        => $result['username'],
+				'role'        => $result['role'],
+				'id'        => $result['id'],
 				
 			];
 			$this->session->set_userdata($data);
@@ -47,7 +43,10 @@ class Auth extends CI_Controller {
       $this->session->sess_destroy();
 	  redirect(base_url());
 	}
-	
+	public function register()
+	 {
+      $this->load->view('auth/register');
+	}
 }
 
 ?>

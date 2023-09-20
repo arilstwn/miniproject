@@ -1,22 +1,3 @@
-<?php
-    include 'connect.php';
-    if (isset($_POST['submit'])) {
-        // Code for get input inside tag form
-        $nama_siswa = $_POST['nama'];
-        $nisn = $_POST['nisn'];
-        $gender = $_POST['gender'];
-        $input_id_kelas = $_POST['id_kelas'];
-
-        // Code for add data siswa to database
-        $sql = "insert into siswa(nama_siswa, nisn, gender, id_kelas) values('$nama_siswa', '$nisn', '$gender', '$input_id_kelas')";
-        $result = mysqli_query($conn, $sql);
-        if ($result) {
-            header('location:siswa.php');
-            } else {
-            die($conn->connect_error);
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 

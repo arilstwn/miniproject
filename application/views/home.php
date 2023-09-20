@@ -139,7 +139,7 @@ span.psw {
   <center><h1 style="background-color:DodgerBlue;" style="color:yellow">Pendaftaran Online Di Class Roam Of The Elite</h1></center>
   <center><h3>エリートクラス登録の徘徊</h3></center>
   <hr>
-  <center><img src="https://o.remove.bg/downloads/540c71b8-cc3a-47f5-b215-99a451d154aa/images-removebg-preview.png" alt="" width="230" height="250"></center>
+  <center><img src="https://o.remove.bg/downloads/69365aa8-2fe7-4584-96b5-3c63ea5ac87d/images-removebg-preview-removebg-preview.png" alt="" width="230" height="250"></center>
   <center><p style="color:white">エリートの授業放浪へようこそ 下のリンクに慎重に記入してください。ほんのわずかな間違いが致命的になるため、間違いを犯さないようにしてください。</p></center>
   <center><p style="color:yellow">Erīto no jugyō hōrō e yōkoso shita no rinku ni shinchō ni kinyū shite kudasai. Hon'no wazukana machigai ga chimei-teki ni naru tame, machigai o okasanai yō ni shite kudasai.</p></center>
   <center><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="http://localhost/miniproject/auth/register">register</a></button>
@@ -150,7 +150,7 @@ span.psw {
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <a></a>
-      <img src="https://o.remove.bg/downloads/383c6786-4bfa-4c2f-967c-7638985a63dd/class_roam-removebg-preview.png" alt="" width="660" height="300">
+      <img src="https://o.remove.bg/downloads/9b5b6b62-eba9-4847-9012-90fe56950c07/jl-removebg-preview.png" alt="" width="450" height="300">
     </div>
         <center><a style="color:red">記入してください。姉/妹</a></center>
         <center><a style="color:blue">Para Member Baru Wajib Mengisi</a></center>
