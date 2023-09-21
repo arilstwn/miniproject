@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+   <style>
+body {
+  background-image: url('https://dafunda.com/wp-content/uploads/2019/10/Anime-Terbaik-Animasi-Jepang-Terbaik-Dafunda-Otaku-5.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+</style>
 </head>
+<body>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
 
-<body class="min-vh-100 d-flex align-items-center">
-    <div class="card w-50 m-auto p-3">
-        <h3 class="text-center">Create</h3>
-        <form method="post" class="row">
-            <div class="mb-3 col-6">
-                <label for="nama" class="form-label">Nama Siswa</label>
-                <input type="text" class="form-control" id="nama" name="nama">
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX">Password</label>
+              </div>
+
+              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
+              <a href="<?php echo base_url('admin') ?>" class="btn btn-secondary">Login</a>
+
+              <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+              </div>
+
             </div>
-            <div class="mb-3 col-6">
-                <label for="nisn" class="form-label">NISN</label>
-                <input type="text" class="form-control" id="nisn" name="nisn">
+
+            <div>
+              <p class="mb-0">Don't have an account? <a href="" class="text-white-50 fw-bold">Sign Up</a>
+              </p>
             </div>
-           
-            <div class="mb-3 col-6">
-                <label for="kelas" class="form-label">Kelas</label>
-                <select name="id_kelas" class="form-select">
-                    <option selected>Pilih Kelas</option>
-                    <?php 
-                    $sql = "select * from kelas";
-                    $result = mysqli_query($conn, $sql);
-                    foreach ($result as $row) :
-                        ?>
-                    <option value="<?= $row['id'] ?>"><?= $row['tingkat_kelas'].' '.$row['jurusan_kelas']; ?>
-                    </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-        </form>
+
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 </body>
-
 </html>

@@ -17,12 +17,18 @@ class Admin extends CI_Controller {
 		
 		$this->load->view('admin/index');
 	}
-	public function guru()
+	public function ubah_siswa()
 	{
-		$data['guru '] = $this->m_model->get_data('guru ')->result();
-
-		$this->load->view('admin/guru',$data);
+		$this->load->view('admin/ubah_siswa');
 	}
+	
+	public function dasboard()
+	{
+		$data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
+		$data['guru'] = $this->m_model->get_data('guru')->num_rows();
+		$this->load->view('admin/dasboard',$data);
+	}
+	
 	public function siswa()
 	{
 		$data['siswa'] = $this->m_model->get_data('siswa')->result();
@@ -56,11 +62,43 @@ class Admin extends CI_Controller {
 		$this->m_model->tambah_data('siswa', $data);
 		redirect(base_url('admin/tambah_siswa'));
 	}
-	public function ubah_siswa()
+	public function guru()
 	{
-		$data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa')->result();
-		$data['kelas']=$this->m_model->get_data('kelas')->result();
-		$this->load->view('admin/ubah_siswa', $data);
+		$data['guru'] = $this->m_model->get_data('guru')->result();
+		$data['mapel'] = $this->m_model->get_data('mapel')->result();
+		$this->load->view('admin/guru', $data);
 	}
+	public function hapus_guru()
+	{
+		$data['guru']=$this->m_model->get_data('guru')->result();
+		redirect(base_url('admin/guru'));
+	}
+	public function tambah_guru()
+	{
+		$data['guru']=$this->m_model->get_data('guru')->result();
+		$this->load->view('admin/tambah_guru', $data);
+	}
+	public function aksi_tambah_guru()
+	{
+		$data = [
+			'nama_guru' => $this->input->post('nama_guru'),
+			'nik' => $this->input->post('nisn'),
+			'gender' => $this->input->post('gender'),
+			'guru_mapel' => $this->input->post('guru_mapel'),
+		];
+		$this->m_model->tambah_data('guru', $data);
+		redirect(base_url('admin/tambah_guru'));
+	}
+	public function ubah_guru()
+	{
+		
+		$this->load->view('admin/ubah_guru');
+	}	
+	public function aksi_ubah_guru()
+	{
+		$data['guru']=$this->m_model->get_data('guru')->result();
+		$this->load->view('admin/ubah_guru', $data);
+	}
+
 	
 }

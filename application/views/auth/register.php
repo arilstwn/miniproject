@@ -55,7 +55,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 <style>
 body {
-  background-image: url('https://o.remove.bg/uploads/cd4a4bc5-085d-4b19-9aa1-710f7e18edf0/Hololive.Indonesia.full.3234714-removebg-preview.png');
+  background-image: url('https://o.remove.bg/uploads/3fcf9ef5-5af8-453e-9ad6-069e8b67c97d/Hololive.Indonesia.full.3234714-removebg-preview.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
@@ -111,10 +111,8 @@ form {
                   </label>
                 </div>
 
-                <div class="d-flex justify-content-center">
-                  <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                </div>
+                <a href="<?php echo base_url('auth/login') ?>" class="btn btn-secondary">Register</a>
+                                
 
                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
                     class="fw-bold text-body"><u>Login here</u></a></p>

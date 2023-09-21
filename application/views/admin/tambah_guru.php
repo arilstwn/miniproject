@@ -28,9 +28,9 @@
 
 <body class="min-vh-100 d-flex align-items-center">
     <div class="card w-50 m-auto p-3">
-        <h3 class="text-center">Tambah Siswa</h3>
+        <h3 class="text-center">Tambah Guru</h3>
         <hr>
-        <form action="<?php echo base_url('Admin/aksi_tambah_siswa') ?>" method="post" class="row">
+        <form action="<?php echo base_url('Admin/aksi_tambah_guru') ?>" method="post" class="row">
             <div class="mb-3 col-6">
                 <label for="nama" class="form-label"><b>Nama Siswa</b></label>
                 
@@ -38,9 +38,9 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="nisn" class="form-label"><b>NISN</b></label>
+                <label for="nik" class="form-label"><b>NIK</b></label>
                 
-                <input type="text" class="form-control" id="nisn" name="nisn">
+                <input type="text" class="form-control" id="nik" name="nik">
                 <hr>
             </div>
             <div class="mb-3 col-6">
@@ -57,26 +57,22 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-            <label for="kelas" class="form-label"><b>Kelas</b></label>
+            <label for="guru" class="form-label"><b>Mapel</b></label>
            
-            <select name="kelas" class="form-select">    
+            <select name="guru" class="form-select">    
               <option>
-              Pilih Kelas
+              Pilih Mapel
               </option>     
-                 <?php foreach($kelas as $row):?>
+                 <?php foreach($guru as $row):?>
               <option value="<?php echo $row->id ?>">
-                <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
+                <?php echo $row->nama_mapel.' '.$row->nama_mapel ?>
               </option>
                 <?php endforeach ?>
             </select>
             <hr>
           </div>
-          <center>
-          <div class="mb-3 col-6">
-                <label for="nama_sekolah" class="form-label"><b>Sekolah</b></label>
-                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
-            </div></center>
-        <a href="<?php echo base_url('admin/siswa') ?>" class="btn btn-primary">Tambah</a>
+         
+        <a href="<?php echo base_url('admin/guru')?>" class="btn btn-primary">Tambah</a>
              
         </form>
     </div>

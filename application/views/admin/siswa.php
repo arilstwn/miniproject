@@ -17,7 +17,9 @@ body {
 }
 </style>
 </head>
-<body >
+<body>
+  
+   
 <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
    <span class="sr-only">Open sidebar</span>
    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -103,16 +105,14 @@ body {
                                     <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_sekolah ?>
                                  </td>
                                  <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                 <a href="http://localhost/miniproject/admin/ubah_siswa" <?php echo base_url('admin/ubah_siswa/').$row->id_siswa ?> class="inline-block rounded bg-red-600 px-3 py-2 text-xs font-medium text-white hover:bg-red-700">Ubah</a>   
-                                    <a href="#" class="inline-block rounded bg-blue-600 px-3 py-2 text-xs font-medium text-white hover:bg-red-700">Hapus</a>                                         
-                                          </td>
-                                       </tr>
-                                       <?php endforeach ?>
-                                       
-                                    </tbody>
-                                 </table>
-                                 
-                                 <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-primary">Tambah</a>
+                                 <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>" class="btn btn-warning">Ubah</a>
+                              <button onclick="hapus(<?php echo $row->id_siswa ?>)" class="btn btn-danger">Hapus</button>
+         
+                                  </td>
+                              </tr><?php endforeach ?>
+                           </table>
+                         <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-secondary">Tambah</a>
+                                
                     </div>
                     </form>
 

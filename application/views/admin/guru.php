@@ -69,66 +69,62 @@ body {
    </div>
 </aside>
 
-
-
-   
-
-<div class="row ">
-            <div class="col-12 card p-6">
-                <div class="card-body min-vh-200 align-items-center">
-                    <div class="card w-50 m-auto p-3">
+<center><div class="row ">
+            <div class="col-12 card p-6"> 
+                <div class="card-body min-vh-200  align-items-center">
+                    <div class="card w-50 m-auto p-2">
                         <table class="table  table-striped">
                             <center><thead>
                                 <tr>
                                     <th scope="col">No </th>
-                                    <th scope="col">Nama_guru </th>
-                                    <th scope="col">NIk </th>
-                                    <th scope="col"> Gender </th>
-                                    <th scope="col">Nama_Mapel </th>
-                                    <th scope="col">Guru_Mapel </th>
+                                        <th scope="col">Nama_guru </th>
+                                            <th scope="col">NIK </th>
+                                                <th scope="col"> Gender </th>
+                                            <th scope="col"> nama_mapel </th>
                                     <th scope="col">Aksi</th>
                                     
                                 </tr>
                             </thead></center>
                             <tbody>
                                 <?php
-                 $no= 0;foreach ($guru as $row) :$no++                          
+                 $no= 0; foreach ($guru as $row  ) :$no++                          
                     ?>
                                 <tr>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $no ?></td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                        <?php echo $row->nama_guru ?></td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_mapel ?>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->guru_mapel ?>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo$no ?></td>
+                                        <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_guru ?></td>
+                                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
+                                                <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?>
+                                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nama_mapel ?>
                                  </td>
-                                 </td>
+                                
                                  <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                    <a href="http://localhost/codeigniter-3/admin/ubah_siswa"<?php echo base_url('admin/ubah_siswa/').$row->nama_guru ?>>Ubah</a>
-                                    <a href="#" class="inline-block rounded bg-blue-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">Hapus</a>                                         
-                                          </td>
-                                       </tr>
-                                       <?php endforeach ?>
-                                       
-                                    </tbody>
-                                 </table>
-                                 
-                                 <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-primary">Tambah</a>
+                                 <a href="<?php echo base_url('admin/ubah_guru/').$row->nama_guru?>" class="btn btn-warning">Ubah</a>
+                                 <button onclick="hapus(<?php echo $row->nama_guru?>)" class="btn btn-danger">Hapus</button>
+         
+                                  </td>
+                              </tr><?php endforeach ?>
+                           </table>
+                         <a href="<?php echo base_url('admin/tambah_guru') ?>" class="btn btn-secondary">Tambah</a>
+                                
                     </div>
                     </form>
 
                    
 
                 </div>
-            </div>
+            </div></center>
 <script>
    function hapus(id) {
       var yes = confirm('yakin di hapus');
       if (yes == true) {
-         window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+         window.location.href = "<?php echo base_url('admin/hapus_guru/')?>" + id;
       }
    }
+</script>
+
+   
+
+
 </script>
 </body>
 </html>

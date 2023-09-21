@@ -1,78 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+        body {
+          background-image: url('https://i0.wp.com/arifkeisuke.com/wp-content/uploads/2017/11/111517_1020_Rekomendasi4-1024x576.jpg?resize=1024%2C576');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
+        }
+       </style>
+        <style>
+        
+        div {
+          background-image: url('https://i.ytimg.com/vi/CmRyGcR8fc4/maxresdefault.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed; 
+          background-size: 100% 100%;
+        }
+       </style>
 </head>
-<body>
-<?php include( 'connect.php' ) ?>
-<!DOCTYPE html>
-<html lang = 'en'>
 
-<head>
-<meta charset = 'UTF-8'>
-<meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
-<title>記入してください、兄弟</title>
-<link href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel = 'stylesheet'
-integrity = 'sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin = 'anonymous'>
-<script src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js'
-integrity = 'sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm' crossorigin = 'anonymous'>
-</script>
-
-</head>
-<body class = 'min-vh-100 d-flex align-items-center'>
-<div class = 'card w-100 m-auto p-3'>
-<h3 class = 'text-center' >記入してください、お姉さん</h3>
-<!-- <button <a herf="create.php" >nisa</button> -->
-<a href="pdi.php">add</a>
-<table class = 'table  table-striped'>
-<thead>
-<tr>
-
-<th scope = 'col'>Unsername</th>
-<th scope = 'col'>Nama waifu</th>   
-<th scope = 'col'>Nama anak</th>
-<th scope = 'col'>Nomor hp</th>
-<th scope = 'col'>NIS</th>
-
-</tr>
-</thead>
-<tbody classs = 'table-grup-divider'>
-<?php
-$sql = 'select * from pdi ';
-$result = mysqli_query( $conn, $sql );
-if ( $result ) {
-    while( $data = mysqli_fetch_assoc( $result ) ) {
-       $id = $data['id'];
-       $Unsername = $data['Unsername'];
-       $Nama_waifu = $data['Nama_waifu'];
-       $Nama_anak = $data['Nama_anak'];
-       $Nomer_hp = $data['Nomer_hp'];
-       $NIS = $data['NIS'];
-        echo '
-            <tr>
-            <td>'.$Unsername.'</td>
-            <td>'.$Nama_waifu.'</td>
-            <td>'.$Nama_anak.'</td>
-            <td>'.$Nomer_hp.'</td>
-            <td>'.$NIS.'</td>
-            <td class="text-center">
-            <a href="update.php?id='.$id.'" class="btn btn-sm btn-primary">Update</a>
-            <button onclick="hapus('.$id.')" class="btn btn-sm btn-danger">Delete</button>
-            </td>
-            </tr>
-            ';
-    }
-}
-?>
-<script>
-function hapus( id ) {
-    var yes = confirm( 'Yakin Di Hapus?' );
-    if ( yes === true ) {
-        window.location.href = 'delete.php?id=' + id;
-    }
-}
-</script>
+<body class="min-vh-100 d-flex align-items-center">
+    <div class="card w-50 m-auto p-3">
+        <h3 class="text-center">Tambah Siswa</h3>
+        <hr>
+        <form action="<?php echo base_url('Admin/aksi_tambah_siswa') ?>" method="post" class="row">
+            <div class="mb-3 col-6">
+                <label for="nama" class="form-label">Nama Siswa</label>
+                <input type="text" class="form-control" id="nama" name="nama">
+            </div>
+            <div class="mb-3 col-6">
+                <label for="nisn" class="form-label">NISN</label>
+                <input type="text" class="form-control" id="nisn" name="nisn">
+            </div>
+            <div class="mb-3 col-6">
+                <label for="gender" class="form-label">Gender</label>
+                <select name="gender" class="form-select">
+                    <option selected>Pilih Gender</option>
+            
+            </option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="mb-3 col-11">
+            <label for="kelas" class="form-label">Kelas</label>
+            <select name="kelas" class="form-select">    
+              <option>
+              Pilih Kelas
+              </option>     
+                 <?php foreach($kelas as $row):?>
+              <option value="<?php echo $row->id ?>">
+                <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
+              </option>
+                <?php endforeach ?>
+            </select>
+          </div>
+          <center>
+          <div class="mb-3 col-6">
+                <label for="nama_sekolah" class="form-label">Sekolah</label>
+                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
+            </div></center>
+        <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-primary">Tambah</a>
+             
+        </form>
+    </div>
 </body>
-</html
+
+</html>

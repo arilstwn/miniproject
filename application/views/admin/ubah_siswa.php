@@ -29,27 +29,32 @@
     <div class="card w-50 m-auto p-3">
         <h3 class="text-center">Ubah Siswa</h3>
         <hr>
+        
         <form method="post" class="row">
             <div class="mb-3 col-6">
-                <label for="nama" class="form-label">Nama Siswa</label>
+                <label for="nama" class="form-label"><b>Nama Siswa</b></label>
                 <input type="text" class="form-control" id="nama" name="nama">
+                <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="nisn" class="form-label">NISN</label>
+                <label for="nisn" class="form-label"><b>NISN</b></label>
                 <input type="text" class="form-control" id="nisn" name="nisn">
+                <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="gender" class="form-label">Gender</label>
+                <label for="gender" class="form-label"><b>Gender</b></label>
                 <select name="gender" class="form-select">
                     <option selected>Pilih Gender</option>
             
             </option>
                     <option value="Laki-Laki">Laki-Laki</option>
                     <option value="Perempuan">Perempuan</option>
+                    <option value="Perempuan">2D</option>
                 </select>
+                <hr>
             </div>
-            <div class="mb-3 col-11">
-            <label for="kelas" class="form-label">Kelas</label>
+            <div class="mb-3 col-6">
+            <label for="kelas" class="form-label"><b>Kelas</b></label>
             <select name="kelas" class="form-select">    
               <option>
                Pilih Kelas
@@ -60,15 +65,18 @@
               </option>
                 <?php endforeach ?>
             </select>
+            <hr>
           </div>
           <center>
           <div class="mb-3 col-6">
                 <label for="nama_sekolah" class="form-label">Sekolah</label>
                 <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
+                <hr>
             </div></center>
-        <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-primary">Ubah</a>
+        <a href="<?php echo base_url('admin/siswa') ?>" class="btn btn-primary">Ubah</a>
              
         </form>
+       
     </div>
 </body>
 
