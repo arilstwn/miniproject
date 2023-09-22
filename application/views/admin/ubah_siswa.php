@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,20 +29,24 @@
         <h3 class="text-center">Ubah Siswa</h3>
         <hr>
         
-        <form method="post" class="row">
+        <?php foreach ($siswa as $data_siswa) : ?>
+        <form action="<?php echo base_url('admin/aksi_ubah_siswa') ?>"
+        enctype="multipart/form-data"
+        method="post" class="row">
+        <input name="id_siswa" type="hidden" value="<?php echo $data_siswa->id_siswa?>">
             <div class="mb-3 col-6">
                 <label for="nama" class="form-label"><b>Nama Siswa</b></label>
-                <input type="text" class="form-control" id="nama" name="nama">
+                <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $data_siswa->nama_siswa ?>">
                 <hr>
             </div>
             <div class="mb-3 col-6">
                 <label for="nisn" class="form-label"><b>NISN</b></label>
-                <input type="text" class="form-control" id="nisn" name="nisn">
+                <input type="text" class="form-control" id="nisn" name="nisn" value="<?php echo $data_siswa->nisn ?>">
                 <hr>
             </div>
             <div class="mb-3 col-6">
                 <label for="gender" class="form-label"><b>Gender</b></label>
-                <select name="gender" class="form-select">
+                <select name="gender" class="form-select" value="<?php echo $data_siswa->gender ?>">
                     <option selected>Pilih Gender</option>
             
             </option>
@@ -54,29 +57,28 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-            <label for="kelas" class="form-label"><b>Kelas</b></label>
-            <select name="kelas" class="form-select">    
-              <option>
-               Pilih Kelas
-              </option>     
-                 <?php foreach($kelas as $row):?>
-              <option value="<?php echo $row->id ?>">
-                <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
-              </option>
-                <?php endforeach ?>
-            </select>
-            <hr>
-          </div>
-          <center>
-          <div class="mb-3 col-6">
-                <label for="nama_sekolah" class="form-label">Sekolah</label>
-                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
-                <hr>
-            </div></center>
+                <label for="kelas" class="form-label">Kelas</label>
+                <select name="id_kelas" class="form-select">
+                    <option selected value="<?php echo $data_siswa->id_kelas ?>">
+                    <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
+                    </option>
+                    <?php foreach($kelas as $row): ?>
+                        <option value="<?php echo $row->id ?>">
+                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas; ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-info" type="submit">Ubah</button>
+                    </div>
+                </div>
+          
+          
+          
         <a href="<?php echo base_url('admin/siswa') ?>" class="btn btn-primary">Ubah</a>
-             
+           
         </form>
-       
+        <?php endforeach; ?>
     </div>
 </body>
 

@@ -25,16 +25,15 @@
         }
        </style>
 </head>
-
 <body class="min-vh-100 d-flex align-items-center">
     <div class="card w-50 m-auto p-3">
         <h3 class="text-center">Tambah Siswa</h3>
         <hr>
-        <form action="<?php echo base_url('Admin/aksi_tambah_siswa') ?>" method="post" class="row">
+        <form action="<?php echo base_url('admin/aksi_tambah_siswa') ?>" method="post" class="row">
             <div class="mb-3 col-6">
-                <label for="nama" class="form-label"><b>Nama Siswa</b></label>
+                <label for="nama" class="form-label"><b>Nama siswa</b></label>
                 
-                <input type="text" class="form-control" id="nama" name="nama">
+                <input type="text" class="form-control" id="nama_siswa" name="nama_siswa">
                 <hr>
             </div>
             <div class="mb-3 col-6">
@@ -76,10 +75,12 @@
                 <label for="nama_sekolah" class="form-label"><b>Sekolah</b></label>
                 <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
             </div></center>
-        <a href="<?php echo base_url('admin/siswa') ?>" class="btn btn-primary">Tambah</a>
-             
+
+         
+<button type="submit" class="btn btn-sm btn-primary">Tambah</button>             
         </form>
     </div>
+
 </body>
 
 </html>

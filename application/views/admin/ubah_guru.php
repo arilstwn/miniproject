@@ -8,7 +8,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <style>
-        body {
+        body{
           background-image: url('https://arifkeisuke.com/wp-content/uploads/2017/12/anime-anime-art-Shigatsu-wa-Kimi-no-Uso-arima-kousei-1894839.jpg');
           background-repeat: no-repeat;
           background-attachment: fixed; 
@@ -16,8 +16,7 @@
         }
        </style>
         <style>
-        
-        div {
+        div{
           background-image: url('https://i.ytimg.com/vi/CmRyGcR8fc4/maxresdefault.jpg');
           background-repeat: no-repeat;
           background-attachment: fixed; 
@@ -30,23 +29,27 @@
     <div class="card w-50 m-auto p-3">
         <h3 class="text-center">Ubah Guru</h3>
         <hr>
-        <form action="<?php echo base_url('Admin/aksi_tambah_siswa') ?>" method="post" class="row">
+        
+       
+        <?php foreach ($guru as $data_guru) : ?>
+        <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>"
+        enctype="multipart/form-data"
+        method="post" class="row">
+        <input name="id_guru" type="hidden" value="<?php echo $data_guru->id_guru?>">
+        
             <div class="mb-3 col-6">
-                <label for="nama" class="form-label"><b>Nama Siswa</b></label>
-                
-                <input type="text" class="form-control" id="nama" name="nama">
+                <label for="nama" class="form-label"><b>Nama Guru</b></label>
+                <input type="text" class="form-control" id="nama_guru" name="nama_guru" value="<?php echo $data_guru->nama_guru ?>">
                 <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="nik" class="form-label"><b>NIK</b></label>
-                
-                <input type="text" class="form-control" id="nik" name="nik">
+                <label for="nisn" class="form-label"><b>NIK</b></label>
+                <input type="text" class="form-control" id="nik" name="nik" value="<?php echo $data_guru->nik ?>">
                 <hr>
             </div>
             <div class="mb-3 col-6">
                 <label for="gender" class="form-label"><b>Gender</b></label>
-                
-                <select name="gender" class="form-select">
+                <select name="gender" class="form-select" value="<?php echo $data_guru->gender ?>">
                     <option selected>Pilih Gender</option>
             
             </option>
@@ -57,23 +60,26 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-            <label for="mapel" class="form-label"><b>Mapel</b></label>
-           
-            <select name="mapel" class="form-select">    
-              <option>
-              Pilih Mapel
-              </option>     
-                 <?php foreach($guru as $row):?>
-              <option value="<?php echo $row->id ?>">
-                <?php echo $row->nama_mapel.' '.$row->nama_mapel ?>
-              </option>
-                <?php endforeach ?>
-            </select>
-            <hr>
-          </div>
-        <a href="<?php echo base_url('admin/tambah_guru') ?>" class="btn btn-primary">Tambah</a>
-             
+                <label for="kelas" class="form-label">Nama_Mapel</label>
+                <select name="id" class="form-select">
+                    <option selected value="<?php echo $data_guru->id_nama_mapel ?>">
+                    <?php echo tampil_full_nama_mapel_byid($data_guru->id_nama_maple) ?>
+                    </option>
+                    <?php foreach($kelas as $row): ?>
+                        <option value="<?php echo $row->id ?>">
+                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas; ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-info" type="submit">Ubah</button>
+                    </div>
+                </div>
+            
+        <a href="<?php echo base_url('admin/guru') ?>" class="btn btn-primary">Ubah</a>
+        </div> 
         </form>
+       
     </div>
 </body>
 

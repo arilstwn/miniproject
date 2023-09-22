@@ -30,11 +30,11 @@
     <div class="card w-50 m-auto p-3">
         <h3 class="text-center">Tambah Guru</h3>
         <hr>
-        <form action="<?php echo base_url('Admin/aksi_tambah_guru') ?>" method="post" class="row">
+        <form action="<?php echo base_url('admin/aksi_tambah_guru') ?>" method="post" class="row">
             <div class="mb-3 col-6">
-                <label for="nama" class="form-label"><b>Nama Siswa</b></label>
+                <label for="nama" class="form-label"><b>Nama Guru</b></label>
                 
-                <input type="text" class="form-control" id="nama" name="nama">
+                <input type="text" class="form-control" id="nama_guru" name="nama_guru">
                 <hr>
             </div>
             <div class="mb-3 col-6">
@@ -57,23 +57,22 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-            <label for="guru" class="form-label"><b>Mapel</b></label>
-           
-            <select name="guru" class="form-select">    
-              <option>
-              Pilih Mapel
-              </option>     
-                 <?php foreach($guru as $row):?>
-              <option value="<?php echo $row->id ?>">
-                <?php echo $row->nama_mapel.' '.$row->nama_mapel ?>
-              </option>
-                <?php endforeach ?>
-            </select>
+            <label for="guru" class="form-label"><b>Nama_Mapel</b></label>
+            <input type="text" class="form-control" id="mapel" name="mapel">
+
+          
             <hr>
           </div>
+          <center>
+            <div class="mb-3 col-6">
+            <label for="guru" class="form-label"><b>Guru_Mapel</b></label>
+            <input type="text" class="form-control" id="guru_mapel" name="guru_mapel">
+
+          
+            <hr>
+          </div></center>
          
-        <a href="<?php echo base_url('admin/guru')?>" class="btn btn-primary">Tambah</a>
-             
+<button type="submit" class="btn btn-sm btn-primary">Tambah</button>             
         </form>
     </div>
 </body>
