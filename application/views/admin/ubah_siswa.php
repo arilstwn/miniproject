@@ -57,29 +57,20 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="kelas" class="form-label">Kelas</label>
-                <select name="id_kelas" class="form-select">
-                    <option selected value="<?php echo $data_siswa->id_kelas ?>">
-                    <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
-                    </option>
-                    <?php foreach($kelas as $row): ?>
-                        <option value="<?php echo $row->id ?>">
-                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas; ?>
-                        </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-info" type="submit">Ubah</button>
-                    </div>
-                </div>
-          
-          
-          
-        <a href="<?php echo base_url('admin/siswa') ?>" class="btn btn-primary">Ubah</a>
+                <label for="id_kelas" class="form-label"><b>Kelas</b></label>
+                <input type="text" class="form-control" id="id_kelas" name="id_kelas" value="<?php echo $data_siswa->id_kelas ?>">
+                <hr>
+            </div>
            
-        </form>
-        <?php endforeach; ?>
-    </div>
+                <center>
+                <div class="mb-3 col-6">
+                <label for="nama_sekolah" class="form-label"><b>Sekolah</b></label>
+                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
+                <hr>
+            </div></center>
+                <button class="btn btn-lg btn-primary" type="submit">Ubah</button>           
+                        </form>
+                        <?php endforeach; ?>
 </body>
 
 </html>

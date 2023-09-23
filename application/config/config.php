@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/miniproject/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'home.php';
+$config['index_page'] = 'admin.php';
 
 /*
 |--------------------------------------------------------------------------

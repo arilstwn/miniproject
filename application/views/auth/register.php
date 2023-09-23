@@ -55,7 +55,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 <style>
 body {
-  background-image: url('https://o.remove.bg/uploads/3fcf9ef5-5af8-453e-9ad6-069e8b67c97d/Hololive.Indonesia.full.3234714-removebg-preview.png');
+  background-image: url('https://o.remove.bg/uploads/ba05b9aa-0f57-4ff4-ba51-f7e8559aa25c/Hololive.Indonesia.full.3234714-removebg-preview.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
@@ -84,24 +84,24 @@ form {
 
 
 
-              <form action="/action_page.php" style="max-width:600px;margin:auto">
+              <form action="<?php echo base_url('Auth/aksi_register') ?>" style="max-width:600px;margin:auto">
+                <label for="uname"><b>Email:</b></label>
+               <div class="input-container">
+               <i class="fa fa-envelope icon"></i>
+               <input class="input-field" type="text" placeholder="Mēruadoresu o go kinyū kudasai" name="email">
+                </div>
+                
                <b>Username:</b>
               <div class="input-container">
               <i class="fa fa-user icon"></i>
-              <input class="input-field" type="text" placeholder="Koko ni namae o kaite kudasai" name="usrnm">
+              <input class="input-field" type="text" placeholder="Koko ni namae o kaite kudasai" name="username">
                </div>
 
 
-               <label for="uname"><b>Email:</b></label>
-              <div class="input-container">
-              <i class="fa fa-envelope icon"></i>
-              <input class="input-field" type="text" placeholder="Mēruadoresu o go kinyū kudasai" name="email">
-               </div>
-               
                <label for="uname"><b>Password:</b></label>
               <div class="input-container">
               <i class="fa fa-key icon"></i>
-              <input class="input-field" type="password" placeholder="Pasuwādo o nyūryoku shite kudasai" name="psw">
+              <input class="input-field" type="password" placeholder="Pasuwādo o nyūryoku shite kudasai" name="password">
                </div>
  
                 <div class="form-check d-flex justify-content-center mb-5">
@@ -111,10 +111,10 @@ form {
                   </label>
                 </div>
 
-                <a href="<?php echo base_url('auth/login') ?>" class="btn btn-secondary">Register</a>
+         <button type="submit" class="btn btn-secondary">Register</button>
                                 
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href=""
                     class="fw-bold text-body"><u>Login here</u></a></p>
 
               </form>

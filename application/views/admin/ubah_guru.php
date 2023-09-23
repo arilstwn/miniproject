@@ -31,11 +31,11 @@
         <hr>
         
        
-        <?php foreach ($guru as $data_guru) : ?>
-        <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>"
-        enctype="multipart/form-data"
-        method="post" class="row">
-        <input name="id_guru" type="hidden" value="<?php echo $data_guru->id_guru?>">
+        <?php   
+        $no=0;
+        foreach ($guru as $data_guru): $no++ ?>
+        <form method="post" class="row">
+        <input name="id_guru" type="hidden">
         
             <div class="mb-3 col-6">
                 <label for="nama" class="form-label"><b>Nama Guru</b></label>
@@ -60,26 +60,23 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="kelas" class="form-label">Nama_Mapel</label>
-                <select name="id" class="form-select">
-                    <option selected value="<?php echo $data_guru->id_nama_mapel ?>">
-                    <?php echo tampil_full_nama_mapel_byid($data_guru->id_nama_maple) ?>
-                    </option>
-                    <?php foreach($kelas as $row): ?>
-                        <option value="<?php echo $row->id ?>">
-                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas; ?>
-                        </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-info" type="submit">Ubah</button>
-                    </div>
-                </div>
-            
-        <a href="<?php echo base_url('admin/guru') ?>" class="btn btn-primary">Ubah</a>
+                <label for="nama_mapel" class="form-label"><b>Nama Mapel</b></label>
+                <input type="text" class="form-control" id="nama_mapel" name="nama_mapel" value="<?php echo $data_guru->nama_mapel ?>">
+                <hr>
+            </div>
+            <center>
+            <div class="mb-3 col-6">
+                <label for="guru_mapel" class="form-label"><b>Guru Mapel</b></label>
+                <input type="text" class="form-control" id="nama_mapel" name="nama_mapel">
+                <hr>
+            </div>
+    </center>
+                      
+                <button class="btn btn-lg btn-primary" type="submit">Ubah</button> 
+
         </div> 
         </form>
-       
+       <?php endforeach ?>
     </div>
 </body>
 

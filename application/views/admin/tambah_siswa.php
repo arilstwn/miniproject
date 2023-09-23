@@ -31,7 +31,7 @@
         <hr>
         <form action="<?php echo base_url('admin/aksi_tambah_siswa') ?>" method="post" class="row">
             <div class="mb-3 col-6">
-                <label for="nama" class="form-label"><b>Nama siswa</b></label>
+                <label for="nama" class="form-label"><b>Nama Siswa</b></label>
                 
                 <input type="text" class="form-control" id="nama_siswa" name="nama_siswa">
                 <hr>
@@ -56,31 +56,23 @@
                 <hr>
             </div>
             <div class="mb-3 col-6">
-            <label for="kelas" class="form-label"><b>Kelas</b></label>
-           
-            <select name="kelas" class="form-select">    
-              <option>
-              Pilih Kelas
-              </option>     
-                 <?php foreach($kelas as $row):?>
-              <option value="<?php echo $row->id ?>">
-                <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
-              </option>
-                <?php endforeach ?>
-            </select>
+            <label for="id_kelas" class="form-label"><b>Kelas</b></label>
+            <input type="text" class="form-control" id="id_kelas" name="id_kelas">
+
+          
             <hr>
           </div>
           <center>
-          <div class="mb-3 col-6">
-                <label for="nama_sekolah" class="form-label"><b>Sekolah</b></label>
-                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
-            </div></center>
+            <div class="mb-3 col-6">
+            <label for="nama_sekolah" class="form-label"><b>Sekolah</b></label>
+            <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah">
 
+          
+            <hr>
+          </div></center>
          
 <button type="submit" class="btn btn-sm btn-primary">Tambah</button>             
         </form>
     </div>
-
 </body>
-
 </html>

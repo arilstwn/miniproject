@@ -7,9 +7,7 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_model');
         $this->load->helper('my_helper');
-        if ($this->session->userdata('logged_in')!=true){
-            redirect(base_url());
-        }
+      
 	}
 
 	public function index()
@@ -21,6 +19,7 @@ class Admin extends CI_Controller {
 	public function ubah_siswa($id)
 	{
 		$data['siswa'] = $this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();
+		$data['kelas'] = $this->m_model->get_by_id('kelas', 'id', $id)->result();
 		$this->load->view('admin/ubah_siswa', $data);
 	}
 
@@ -30,35 +29,36 @@ class Admin extends CI_Controller {
 			'nama_guru' => $this->input->post('nama_guru'),
 			'nisn' => $this->input->post('nisn'),
 			'gender' => $this->input->post('gender'),
-			'id_kelas' => $this->input->post('kelas'),
-			'nama_sekolah' => $this->input->post('nama_sekolah'),
+			'nama_mapel' => $this->input->post('nama_mapel'),
+			'guru_mapel' => $this->input->post('guru_maple'),
 		];
 		$this->m_model->tambah_data('siswa', $data);
 		redirect(base_url('admin/siswa'));
 	}
-// 	public function aksi_ubah_siswa()
-//   {
-//     $data = array (
-//       'nama_siswa' => $this->input->post('nama'),
-//       'nisn' => $this->input->post('nisn'),
-//       'gender' => $this->input->post('gender'),
-//       'id_kelas' =>$this->input->post('id_kelas'),
-// 	  'nama_sekolah' =>$this->input->post('nama_sekolah'),
-//     );
-//     $eksekusi=$this->m_model->ubah_data
-//     ('siswa', $data, array('id_siswa'=>$this->input->post('id_siswa')));
-//     if($eksekusi)
-//     {
-//       $this->session->set_flashdata('sukses', 'berhasil');
-//       redirect(base_url('admin/siswa'));
-//     } 
-//     else
-//     {
-//       $this->session->set_flashdata('error', 'gagal..');
-//       redirect(base_url('admin/aksi_
-//       ubah_siswa/'.$this->input->post('id_siswa')));
-//     }
-//   }
+
+
+	public function aksi_ubah_siswa()
+  {
+    $data = array (
+      'nama_siswa' => $this->input->post('nama'),
+      'nisn' => $this->input->post('nisn'),
+      'gender' => $this->input->post('gender'),
+      'id_kelas' =>$this->input->post('id_kelas'),
+	  'nama_sekolah' =>$this->input->post('nama_sekolah'),
+    );
+    $eksekusi=$this->m_model->ubah_data
+    ('siswa', $data, array('id_siswa'=>$this->input->post('id_siswa')));
+    if($eksekusi)
+    {
+      $this->session->set_flashdata('sukses', 'berhasil');
+      redirect(base_url('admin/siswa'));
+    } 
+    else
+    {
+      $this->session->set_flashdata('error', 'gagal..');
+      redirect(base_url('admin/siswa/'.$this->input->post('id_siswa')));
+    }
+  }
 
 
 
@@ -92,7 +92,7 @@ class Admin extends CI_Controller {
 
 	public function tambah_siswa()
 	{
-		$data['kelas']=$this->m_model->get_data('kelas')->result();
+		$data['siswa']=$this->m_model->get_data('siswa')->result();
 		$this->load->view('admin/tambah_siswa', $data);
 	}
 	
@@ -102,9 +102,9 @@ class Admin extends CI_Controller {
 			'nama_siswa' => $this->input->post('nama_siswa'),
 			'nisn' => $this->input->post('nisn'),
 			'gender' => $this->input->post('gender'),
-			'id_kelas' => $this->input->post('kelas'),
+			'id_kelas' => $this->input->post('id_kelas'),
 			'nama_sekolah' => $this->input->post('nama_sekolah'),
-		];
+			];
 		$this->m_model->tambah_data('siswa', $data);
 		redirect(base_url('admin/siswa'));
 	}
@@ -153,33 +153,34 @@ class Admin extends CI_Controller {
 	// 	$this->load->view('admin/ubah_guru', $data);
 	// }
 
-	public function ubah_guru()
+	public function ubah_guru($id)
 	{
-		//  $data['guru'] = $this->m_model->get_by_id('guru', 'id', $id)->result();
-		$this->load->view('admin/ubah_guru');
+		$data['guru']=$this->m_model->get_data('guru')->result();
+
+		 $data['guru'] = $this->m_model->get_by_id('guru', 'id', $id)->result();
+		$this->load->view('admin/ubah_guru',$data);
 	}
-	// public function aksi_ubah_guru()
-// {
+// 	public function aksi_ubah_guru(){
 //   $data = array (
-    // 'nama_guru' => $this->input->post('nama'),
-    // 'nik' => $this->input->post('nik'),
-    // 'gender' => $this->input->post('gender'),
-    // 'nama_mapel' =>$this->input->post('nama_mapel'),
-	// 'guru_mapel' =>$this->input->post('guru_mapel'),
+//     'nama_guru' => $this->input->post('nama'),
+//     'nik' => $this->input->post('nik'),
+//     'gender' => $this->input->post('gender'),
+//     'nama_mapel' =>$this->input->post('nama_mapel'),
+// 	'guru_mapel' =>$this->input->post('guru_mapel'),
 
 //   );
 //   $eksekusi=$this->m_model->ubah_data
 //   ('guru', $data, array('id_guru'=>$this->input->post('id_guru')));
 //   if($eksekusi)
 //   {
-    // $this->session->set_flashdata('sukses', 'berhasil');
-    // redirect(base_url('admin/guru'));
+//     $this->session->set_flashdata('sukses', 'berhasil');
+//     redirect(base_url('admin/guru'));
 //   } 
 //   else
 //   {
-    // $this->session->set_flashdata('error', 'gagal..');
-    // redirect(base_url('admin/ubah_guru/'.$this->input->post('id_guru')));
+//     $this->session->set_flashdata('error', 'gagal..');
+//     redirect(base_url('admin/ubah_guru/'.$this->input->post('id_guru')));
 //   }
- 
+//   }
 	
 }

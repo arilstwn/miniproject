@@ -51,6 +51,18 @@ class Auth extends CI_Controller {
 	 {
       $this->load->view('auth/login');
 	}
+	public function aksi_register()
+  {
+    $data = [
+      'email' => $this->input->post('email'),
+      'username' => $this->input->post('username'),
+      'password' => $this->input->post('password'),
+    ];
+
+    $this->m_model->tambah_data('admin', $data);
+    redirect(base_url('auth/login'));
+  }
+	
 }
 
 ?>
