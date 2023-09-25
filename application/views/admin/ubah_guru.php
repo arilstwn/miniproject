@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,20 +29,18 @@
         <h3 class="text-center">Ubah Guru</h3>
         <hr>
         
-       
-        <?php   
-        $no=0;
-        foreach ($guru as $data_guru): $no++ ?>
-        <form method="post" class="row">
-        <input name="id_guru" type="hidden">
-        
+        <?php foreach ($guru as $data_guru) : ?>
+        <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>"
+        enctype="multipart/form-data"
+        method="post" class="row">
+        <input name="id_guru" type="hidden" value="<?php echo $data_guru->id?>">
             <div class="mb-3 col-6">
                 <label for="nama" class="form-label"><b>Nama Guru</b></label>
                 <input type="text" class="form-control" id="nama_guru" name="nama_guru" value="<?php echo $data_guru->nama_guru ?>">
                 <hr>
             </div>
             <div class="mb-3 col-6">
-                <label for="nisn" class="form-label"><b>NIK</b></label>
+                <label for="nik" class="form-label"><b>NIK</b></label>
                 <input type="text" class="form-control" id="nik" name="nik" value="<?php echo $data_guru->nik ?>">
                 <hr>
             </div>
@@ -64,20 +61,16 @@
                 <input type="text" class="form-control" id="nama_mapel" name="nama_mapel" value="<?php echo $data_guru->nama_mapel ?>">
                 <hr>
             </div>
-            <center>
-            <div class="mb-3 col-6">
+           
+                <center>
+                <div class="mb-3 col-6">
                 <label for="guru_mapel" class="form-label"><b>Guru Mapel</b></label>
-                <input type="text" class="form-control" id="nama_mapel" name="nama_mapel">
+                <input type="text" class="form-control" id="guru_mapel" name="guru_mapel" value="<?php echo $data_guru->guru_mapel ?>">
                 <hr>
-            </div>
-    </center>
-                      
-                <button class="btn btn-lg btn-primary" type="submit">Ubah</button> 
-
-        </div> 
-        </form>
-       <?php endforeach ?>
-    </div>
+            </div></center>
+                <button class="btn btn-lg btn-primary" type="submit">Ubah</button>           
+                        </form>
+                        <?php endforeach; ?>
 </body>
 
 </html>

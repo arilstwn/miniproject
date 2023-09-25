@@ -26,11 +26,13 @@ body {
 
    
 
-<center><div class="row ">
+<div class="row ">
             <div class="col-12 card p-6">
                 <div class="card-body min-vh-200  align-items-center">
                     <div class="card w-40 m-auto p-2">
                         <table class="table  table-striped">
+                            <center><h1><b>Daftar Data Guru</b></h1></center>
+                            <img src="https://o.remove.bg/downloads/5fb667ff-51e1-4ec7-ac06-315f74d737a8/png-transparent-computer-icons-woman-female-businessman-love-people-logo-removebg-preview.png" alt="" width="430" heigth="430">
                             <center><thead>
                                 <tr>
                                     <th scope="col">No </th>
@@ -72,9 +74,9 @@ body {
 
                 </div>
             </div><
-<script>
+            <script>
    function hapus(id) {
-      var yes = Confirm('yakin di hapus');
+      var yes = confirm ('yakin di hapus');
       if (yes == true) {
          window.location.href = "<?php echo base_url('admin/hapus_guru/')?>" + id;
       }

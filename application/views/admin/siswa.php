@@ -18,19 +18,19 @@ body {
 </style>
 </head>
 <body>
-  
-   
-
-
 
 
    
 
-<center><div class="row ">
+<div class="row ">
             <div class="col-12 card p-6">
                 <div class="card-body min-vh-200  align-items-center">
-                    <div class="card w-40 m-auto p-2">
-                        <table class="table  table-striped">
+                    <div class="card w-30 m-auto p-2">
+                        <table class="table  table-striped"> 
+                            <center><h1><b>Daftar Data Siswa</b></h1></center>
+                        <img src="https://o.remove.bg/downloads/08abdb44-01af-4324-a097-a546a0d0bffa/png-transparent-computer-icons-three-people-black-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-user-removebg-preview-removebg-preview.png" alt="" width="330" height="330">
+                        
+                        
                             <center><thead>
                                 <tr>
                                     <th scope="col">No </th>
@@ -64,8 +64,8 @@ body {
                            </table>
                          <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-secondary">Tambah</a>
                                 
-                    </div>
-                     <a href="<?php echo base_url('admin') ?>" class="btn btn-primary">Kembali</a>
+                    </div> <a href="<?php echo base_url('admin') ?>" class="btn btn-primary">Kembali</a>
+                    
                     </form>
 
                    

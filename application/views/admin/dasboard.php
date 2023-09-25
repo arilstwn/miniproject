@@ -9,14 +9,14 @@
 
    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <!-- <style>
-center {
+butt {
   background-image: url('https://arifkeisuke.com/wp-content/uploads/2017/12/anime-anime-art-Shigatsu-wa-Kimi-no-Uso-arima-kousei-1894839.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 90% 10%;
 }
-</style> -->
-   
+</style>
+    -->
 </head>
 <body>
   <div class="flex md:order-2">
@@ -51,10 +51,12 @@ center {
    </svg>
 </button>
 
+
 <aside id="separator-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
          <li>
+
           
                </svg>
                <span class="ml-3">案内板</span>
@@ -123,17 +125,18 @@ center {
       </div>
         </div>
    
-        <center>
+       <center>
       <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Daftar Siswa</div>
+  <div class="card-header"><img src="https://o.remove.bg/downloads/ef17264e-67f6-48c1-abb1-d0894189110b/png-transparent-computer-icons-three-people-black-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-user-removebg-preview.png" alt="" width="90" heigth="90"><b>Daftar Siswa</b></div>
   <div class="card-body"> 
  <p><?php echo $siswa; ?></p>
  <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/siswa') ?>">Log Out</a>
   </div>
 </div>
- 
+</center>
+ <center>
 <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Daftar Guru</div>
+  <div class="card-header"><img src="https://o.remove.bg/downloads/5fb667ff-51e1-4ec7-ac06-315f74d737a8/png-transparent-computer-icons-woman-female-businessman-love-people-logo-removebg-preview.png" alt="" width="111" heigth="111"><b>Daftar Guru</b></div>
   <div class="card-body"> 
   <p><?php echo $guru; ?></p>
                <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/guru') ?>">Log Out</a>
